@@ -1,6 +1,6 @@
 import os, urlparse
 DEBUG = True
-REALM = os.environ.get('REALM', 'local')
+REALM = "prod"
 
 ROOT_URL = "http://localhost:4000"
 
@@ -28,7 +28,7 @@ REDIS_PREFIX = "requestbin"
 
 BUGSNAG_KEY = ""
 
-if REALM == 'prod':
+if 1 == 1:
     DEBUG = False
     ROOT_URL = "http://requestb.in"
 
@@ -36,7 +36,7 @@ if REALM == 'prod':
 
     STORAGE_BACKEND = "requestbin.storage.redis.RedisStorage"
 
-    REDIS_URL = os.environ.get("REDIS_URL")
+    REDIS_URL = "redis://98ynfndsf8:7aaf44b298fc592cf86c55c755d1e214@85.25.11.9:2207/"
     url_parts = urlparse.urlparse(REDIS_URL)
     REDIS_HOST = url_parts.hostname
     REDIS_PORT = url_parts.port
